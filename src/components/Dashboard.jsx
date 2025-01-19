@@ -1,6 +1,6 @@
 import MyWordCloud from "./MyWordCloud";
 import EffectiveTriggers from "./EffectiveTriggers";
-import Competitors from "./competitors";
+import Competitors from "./Competitors";
 import PainPoints from "./PainPoints";
 import FullAnalysis from "./FullAnalysis";
 import LoadingAnimation from "./LoadingAnimation"; // Import the new loading component
