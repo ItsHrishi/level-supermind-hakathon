@@ -34,16 +34,13 @@ const ResearchForm = ({
 
     try {
       setAnalysisData(null);
-      const response = await fetch(
-        "https://5fb5-2401-4900-198a-c804-3d1b-1b91-667e-b33d.ngrok-free.app/analyse",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await fetch(import.meta.env.VITE_BACKEND_LINK, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
       if (response.ok) {
         const data = await response.json();
@@ -84,7 +81,7 @@ const ResearchForm = ({
             placeholder="Enter the name of the product"
             value={formData.project}
             onChange={onChange}
-            className={`p-2 border-2 border-kraft bg-manilla text-kraft placeholder-book-cloth rounded-lg focus:outline-none ${
+            className={`p-2 border-2 border-kraft bg-manilla text-kraft placeholder-book-cloth placeholder-opacity-50 rounded-lg focus:outline-none ${
               errors.project ? "border-red-500" : "focus:border-book-cloth"
             }`}
             aria-describedby="project-error"
@@ -108,7 +105,7 @@ const ResearchForm = ({
             placeholder="Enter the Market Segment (e.g., Sports, Finance)"
             value={formData.domain}
             onChange={onChange}
-            className={`p-2 border-2 border-kraft bg-manilla text-kraft placeholder-book-cloth rounded-lg focus:outline-none ${
+            className={`p-2 border-2 border-kraft bg-manilla text-kraft placeholder-book-cloth placeholder-opacity-50 rounded-lg focus:outline-none ${
               errors.domain ? "border-red-500" : "focus:border-book-cloth"
             }`}
             aria-describedby="domain-error"
@@ -131,7 +128,7 @@ const ResearchForm = ({
             placeholder="Provide a detailed description of the product"
             value={formData.description}
             onChange={onChange}
-            className={`p-2 border-2 border-kraft bg-manilla text-kraft placeholder-book-cloth rounded-lg focus:outline-none ${
+            className={`p-2 border-2 border-kraft bg-manilla text-kraft placeholder-book-cloth placeholder-opacity-50 rounded-lg focus:outline-none ${
               errors.description ? "border-red-500" : "focus:border-book-cloth"
             }`}
             rows="4"
